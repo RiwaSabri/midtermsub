@@ -1,0 +1,35 @@
+// QUESTION 3
+// Make the lines follow the mouse as a trail behind the mouse position correctly
+// The position is off and so is the assignment
+
+float[] xPositions = new float[100];
+float[] yPositions = new float[100];
+
+void setup() {
+  size(600, 600);
+  for (int i=0;i<99;i++){
+    xPositions[i]=mouseX;
+    yPositions[i]=mouseY;
+  }
+}
+
+void draw() {
+  background(255);
+  for (int i = 0; i < 99; i++) {
+   
+  }
+
+  for (int i = 0; i < 99; i++) {
+    xPositions[i] = xPositions[i+1];
+    yPositions[i] = yPositions[i+1];
+  }
+    xPositions[xPositions.length-1] = mouseX;
+  yPositions[yPositions.length-1] = mouseY;
+
+  xPositions[0] = mouseY;
+  yPositions[0] = mouseX;
+  
+  for (int i=0;i<99;i++){
+  
+   line(xPositions[i], yPositions[i], xPositions[i+1],yPositions[i+1] );
+}}
